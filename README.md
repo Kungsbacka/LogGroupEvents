@@ -5,7 +5,7 @@ Inserts group related events into a database table for auditing.
 ## Usage
 * Rename Config.example.ps1 to Config.ps1 and change the content to match your environment.
 * Create database objects below.
-* Run the script as a user with permission to read the domain controller security log.
+* Run the script as a user with permission to read the domain controller security log. One solution is to create a new security group and give that group read permission to the registry key HKLM\System\CurrentControlSet\Services\Eventlog\Security on all domain controllers.
 
 ## Database table
 ```sql
