@@ -2,7 +2,7 @@
 
 . "$PSScriptRoot\Config.ps1"
 
-$domainControllers = Get-ADDomain -Identity $Script:Config.Domain | ForEach-Object {$_.ReplicaDirectoryServers -split ','}
+$domainControllers = Get-ADDomainController -Filter * | Foreach-Object -MemberName HostName
 
 $con = New-Object -TypeName 'System.Data.SqlClient.SqlConnection'
 $con.ConnectionString = $Script:Config.ConnectionString
